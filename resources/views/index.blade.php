@@ -297,27 +297,45 @@
 
                 <div class="col-md-10" data-aos="flip-down">
 
-                    <form action="">
-
+                    <form action={{ url('Patientstore') }} method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="inputBox">
-                            <input type="text" placeholder="full name">
-                            <input type="number" placeholder="phone">
+                            <input type="text" placeholder="full name" name="full_name">
+                            <input type="number" name="patientPhone" placeholder="phone">
                         </div>
 
                         <div class="inputBox">
-                            <input type="email" placeholder="your email">
-                            <select name="" id="">
-                                <option value="" disabled selected>make an appointment</option>
-                                <option value="09-11 am">09-11 am</option>
-                                <option value="11-03 pm">11-03 pm</option>
-                                <option value="03-06 pm">03-06 pm</option>
-                                <option value="06-09 pm">06-09 pm</option>
+                            <input type="email" name="patientEmail" placeholder="your email">
+                            <select name="doc_patient">
+                                <option selected>Choose Doctor</option>
+                                @foreach($doctors as $doctor)
+                                <option value="{{$doctor->id}}">{{$doctor->first_name . ' '.$doctor->last_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="inputBox">
+                            <select name="dis_patient" class="form-select form-control form-control-sm" aria-label="Default select example">
+                                <option selected>Choose Disease</option>
+                                @foreach($diseases as $disease)
+                                <option value="{{$disease->id}}">{{$disease->disease_name}}</option>
+                                @endforeach
+                            </select>
+
+                            <select name="app_patient" class="form-select form-control form-control-sm" aria-label="Default select example">
+                                <option selected>Choose Appointment</option>
+                                @foreach($appointments as $appointment)
+                                <option value="{{$appointment->id}}">{{$appointment->available_appointment_time}}</option>
+                                @endforeach
                             </select>
                         </div>
 
-                        <textarea name="" id="" cols="30" rows="10" placeholder="message ( optional )"></textarea>
+                        <div class="mb-3">
+                            <input name="photo_patient" class="form-control  form-control-sm" type="file" id="formFile">
+                        </div>
 
-                        <input type="submit" name="" id="" value="make appointment" class="button">
+                        <textarea name="patient_description" id="" cols="30" rows="10" placeholder="message ( optional )"></textarea>
+
+                        <input type="submit" value="make appointment" class="button">
 
                     </form>
 

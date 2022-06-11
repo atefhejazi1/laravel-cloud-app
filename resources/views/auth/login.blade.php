@@ -26,21 +26,6 @@
             <input type="password" placeholder="Password" name="password" />
           </div>
           <input type="submit" value="Login" class="btn solid" />
-          <p class="social-text">Or Sign in with social platforms</p>
-          <div class="social-media">
-            <a href="#" class="social-icon">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-google"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
         </form>
         <form method="POST" action="{{ route('register') }}" class="sign-up-form">
           <x-auth-validation-errors class="mb-4" :errors="$errors" />
@@ -67,21 +52,7 @@
 
 
           <input type="submit" class="btn" value="Sign up" />
-          <p class="social-text">Or Sign up with social platforms</p>
-          <div class="social-media">
-            <a href="#" class="social-icon">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-google"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
+          
         </form>
       </div>
     </div>

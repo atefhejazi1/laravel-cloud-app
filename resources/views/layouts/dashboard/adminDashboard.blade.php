@@ -130,6 +130,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </ul>
                         </li>
 
+
+                        <li class="nav-item ">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                Doctor Specialty
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href={{ url('doctorSpecialty/all') }} class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>All Doctors Specialty</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href={{ url('doctorSpecialty/add') }} class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Create Doctor Specialty</p>
+                                    </a>
+                                </li>
+
+
+
+
+                            </ul>
+                        </li>
                         <li class="nav-item ">
                             <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>

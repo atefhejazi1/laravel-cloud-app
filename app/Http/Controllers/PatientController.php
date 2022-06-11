@@ -37,7 +37,7 @@ class PatientController extends Controller
         $doctors = Doctor::all();
         $diseases = Disease::all();
         $appointments = Appointment::all();
-        return view('patient.addPatient', compact('doctors', 'diseases', 'appointments'));
+        return view('index', compact('doctors', 'diseases', 'appointments'));
     }
 
     /**
@@ -59,14 +59,17 @@ class PatientController extends Controller
 
         $patient = new  Patient;
         $patient->full_name = $request->full_name;
-        $patient->id_number = $request->id_number;
+        $patient->patientPhone = $request->patientPhone;
+        $patient->patientEmail = $request->patientEmail;
         $patient->doc_patient = $request->doc_patient;
         $patient->dis_patient = $request->dis_patient;
         $patient->app_patient = $request->app_patient;
         $patient->photo_patient = $file_name;
+        $patient->patient_description = $request->patient_description;
         $patient->save();
 
         return redirect('patient/all');
+        // return $patient;
     }
 
     /**

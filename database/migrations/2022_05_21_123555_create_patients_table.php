@@ -16,17 +16,22 @@ return new class extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
             $table->string('full_name', 50);
-            $table->string('id_number', 30);
-            
+            $table->string('patientPhone', 15);
+            $table->string('patientEmail', 100);
+
             $table->unsignedBigInteger('doc_patient');
             $table->unsignedBigInteger('dis_patient');
             $table->unsignedBigInteger('app_patient');
+
             $table->string('photo_patient', 500);
-            
+
             $table->foreign('doc_patient')->references('id')->on('doctors');
             $table->foreign('dis_patient')->references('id')->on('diseases');
             $table->foreign('app_patient')->references('id')->on('appointments');
-            
+
+            $table->text('patient_description');
+
+
             $table->timestamps();
         });
     }
