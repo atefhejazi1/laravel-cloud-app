@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\doctor;
 use App\Http\Requests\StoredoctorRequest;
 use App\Http\Requests\UpdatedoctorRequest;
+use App\Mail\TestMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class DoctorController extends Controller
 {
@@ -42,6 +44,7 @@ class DoctorController extends Controller
         $doctor = new  Doctor;
         $doctor->first_name = $request->first_name;
         $doctor->last_name = $request->last_name;
+        $doctor->email = $request->email;
         $doctor->phone = $request->phone;
         $doctor->doctor_password = $request->doctor_password;
         $doctor->save();
@@ -106,5 +109,22 @@ class DoctorController extends Controller
         $doctor->delete();
 
         return redirect('doctor/all');
+    }
+
+
+    public function activate($id)
+    {
+        $doctor = Doctor::find($id);
+        $data = [
+            'title' =>'Activate Doctor',
+            'body' => 'You are an Activate Doctor , Be Ready and Happy'
+        ];
+
+        Mail::to($doctor->email)->send(new TestMail($data));
+
+        dd('Mail Send Successfully');
+
+        // return $doctor;
+        // return redirect('doctor/all');
     }
 }

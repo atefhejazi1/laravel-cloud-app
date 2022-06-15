@@ -135,7 +135,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                Doctor Specialty
+                                    Doctor Specialty
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -153,7 +153,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <p>Create Doctor Specialty</p>
                                     </a>
                                 </li>
-
 
 
 
@@ -231,7 +230,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </ul>
                         </li>
 
-                      
+                        <li class="nav-item ">
+
+                            <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                                <input type="submit" value="Logout" class="btn btn-danger">
+                            </form>
+
+
+                        </li>
+
 
                     </ul>
                 </nav>

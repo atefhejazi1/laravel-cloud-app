@@ -27,7 +27,35 @@
           </div>
           <input type="submit" value="Login" class="btn solid" />
         </form>
-        <form method="POST" action="{{ route('register') }}" class="sign-up-form">
+        <form action={{ url('doctorStore') }} method="POST" class="sign-up-form">
+          @csrf
+          <h2 class="title">Sign up</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="First Name" name="first_name" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Last Name" name="last_name" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" name="email" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-mobile"></i>
+            <input type="text" placeholder="Phone Number" name="phone" />
+          </div>
+         
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" name="doctor_password" />
+          </div>
+
+          <input type="submit" class="btn" value="Sign up" />
+
+        </form>
+        <!-- <form method="POST" action="{{ route('register') }}" class="sign-up-form">
           <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
           @csrf
@@ -53,17 +81,16 @@
 
           <input type="submit" class="btn" value="Sign up" />
           
-        </form>
+        </form> -->
       </div>
     </div>
 
     <div class="panels-container">
       <div class="panel left-panel">
         <div class="content">
-          <h3>New here ?</h3>
+          <h3>New Doctor ?</h3>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-            ex ratione. Aliquid!
+            Signup a New Doctor !!
           </p>
           <button class="btn transparent" id="sign-up-btn">
             Sign up
@@ -75,8 +102,7 @@
         <div class="content">
           <h3>One of us ?</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            laboriosam ad deleniti.
+            If Your on of Us Please Sign In With Your Account !!
           </p>
           <button class="btn transparent" id="sign-in-btn">
             Sign in

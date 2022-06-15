@@ -17,6 +17,9 @@ Add New Doctor
         <input class="form-control form-control-sm" name="last_name" type="text" placeholder="Last Name">
     </div>
     <div class="mb-3">
+        <input class="form-control form-control-sm" name="email" type="text" placeholder="Email">
+    </div>
+    <div class="mb-3">
         <input class="form-control form-control-sm" name="phone" type="text" placeholder="Phone">
     </div>
 

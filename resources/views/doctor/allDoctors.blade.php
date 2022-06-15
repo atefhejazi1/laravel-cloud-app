@@ -14,6 +14,7 @@ All Doctors
             <th scope="col">Last Name</th>
             <th scope="col">Phone</th>
             <th scope="col">Password</th>
+            <th scope="col">Activate Doctor</th>
             <th scope="col">Delete</th>
             <th scope="col">Update</th>
         </tr>
@@ -26,6 +27,7 @@ All Doctors
             <td>{{ $doctor->last_name}}</td>
             <td>{{ $doctor->phone}}</td>
             <td>{{ $doctor->doctor_password}}</td>
+            <td><a href={{ url( 'doctor/activate/' . $doctor->id )}} class="btn btn-primary">Activate</a></td>
             <td><a href={{ url( 'doctor/delete/' . $doctor->id )}} class="btn btn-danger">Delete</a></td>
             <td><a href={{ url( 'doctor/edit/' . $doctor->id )}} class="btn btn-warning">Update</a></td>
         </tr>

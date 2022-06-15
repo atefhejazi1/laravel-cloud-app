@@ -17,8 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('first_name', 30);
             $table->string('last_name', 30);
+            $table->string('email', 100);
             $table->string('phone', 20);
             $table->string('doctor_password', 40);
+            $table->integer('activateDoctor')->default(0);
             $table->timestamps();
         });
     }
